@@ -177,32 +177,53 @@ class VerificationActivity : AppCompatActivity() {
         updateContinueButtonState()
     }
 
+
     private fun verifyOtp() {
         val enteredOtp = getEnteredOtp()
+
         val userType = intent.getStringExtra("user_type")
 
-        Log.d("VerificationActivity", "Verifying OTP: $enteredOtp for userType: $userType")
-
-        if (enteredOtp.length == OTP_LENGTH) {
+        if (enteredOtp == "123456") {
             val nextIntent = when (userType) {
                 "CLIENT" -> Intent(this, ExploreActivity::class.java)
                 "PARTNER" -> Intent(this, PartnerDashboardActivity::class.java)
                 else -> null
             }
 
-            if (nextIntent != null) {
-                nextIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(nextIntent)
+            nextIntent?.let {
+                startActivity(it)
                 finish()
-            } else {
-                Log.e("VerificationActivity", "Unknown user type: $userType")
-                showOtpError()
             }
-
         } else {
             showOtpError()
         }
     }
+//    private fun verifyOtp() {
+//        val enteredOtp = getEnteredOtp()
+//        val userType = intent.getStringExtra("user_type")
+//
+//        Log.d("VerificationActivity", "Verifying OTP: $enteredOtp for userType: $userType")
+//
+//        if (enteredOtp.length == OTP_LENGTH) {
+//            val nextIntent = when (userType) {
+//                "CLIENT" -> Intent(this, ExploreActivity::class.java)
+//                "PARTNER" -> Intent(this, PartnerDashboardActivity::class.java)
+//                else -> null
+//            }
+//
+//            if (nextIntent != null) {
+//                nextIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                startActivity(nextIntent)
+//                finish()
+//            } else {
+//                Log.e("VerificationActivity", "Unknown user type: $userType")
+//                showOtpError()
+//            }
+//
+//        } else {
+//            showOtpError()
+//        }
+//    }
 
 
     private fun showOtpError() {

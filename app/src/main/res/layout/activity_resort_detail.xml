@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Image with Back Button -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:id="@+id/iv_resort_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/resort_alma_tau_1"/>
+
+            <!-- Header Controls -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:background="@drawable/circular_button_background"
+                    android:scaleType="centerInside"
+                    android:contentDescription="Назад"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <ImageButton
+                    android:id="@+id/btn_favorite"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_heart"
+                    android:background="@drawable/circular_button_background"
+                    android:scaleType="centerInside"
+                    android:contentDescription="Избранное"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/content_card_background"
+            android:layout_marginTop="-24dp"
+            android:padding="24dp">
+
+            <!-- Resort Info -->
+            <TextView
+                android:id="@+id/tv_resort_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALMA-TAU"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_resort_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Зона отдыха"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Description -->
+            <TextView
+                android:text="Описание"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Прекрасная зона отдыха в живописном месте с современными удобствами и комфортными условиями для семейного отдыха."
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Options Title -->
+            <TextView
+                android:text="Варианты размещения"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Options List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Book Now Button -->
+            <Button
+                android:id="@+id/btn_book_now"
+                android:text="Забронировать"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/continue_button_selector"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
