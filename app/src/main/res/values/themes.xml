@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/themes.xml or create res/values/styles.xml -->
 <resources>
-
-    <style name="Theme.GreenFox" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.GreenFox" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme -->
+    </style>
 </resources>
