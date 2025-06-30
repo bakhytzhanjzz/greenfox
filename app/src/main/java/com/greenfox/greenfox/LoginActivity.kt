@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        val userType = intent.getStringExtra("USER_TYPE")
 
         initViews()
         setupListeners()
@@ -123,14 +124,15 @@ class LoginActivity : AppCompatActivity() {
     private fun proceedToVerification() {
         val phoneNumber = etPhoneNumber.text.toString().trim()
         val fullPhoneNumber = "+7${phoneNumber.replace("\\D".toRegex(), "")}"
+        val userType = intent.getStringExtra("USER_TYPE")
 
         val intent = Intent(this, VerificationActivity::class.java)
-        intent.putExtra("user_type", intent.getStringExtra("USER_TYPE"))
+        intent.putExtra("user_type", userType)
         intent.putExtra("phone_number", fullPhoneNumber)
         startActivity(intent)
 
 
-        Log.d("LoginActivity", "Proceeding with phone: $fullPhoneNumber")
+        Log.d("LoginActivity", "Proceeding with phone: $fullPhoneNumber, type: $userType")
 
     }
 }
