@@ -16,15 +16,15 @@
 
         <!-- Точка входа -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.GreenFox">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <!-- Экран выбора пользователя -->
         <activity android:name=".ChooseUserActivity" />

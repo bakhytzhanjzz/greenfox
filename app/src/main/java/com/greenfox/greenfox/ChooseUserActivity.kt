@@ -1,6 +1,5 @@
 package com.greenfox.greenfox
 
-import LoginActivity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
